@@ -1,0 +1,9 @@
+{{!-- Main layout template --}}
+{{> header}}
+<h1>Welcome to My Blog</h1>
+<ul>
+  {{#each posts}}
+    <li><a href="/post/{{id}}">{{title}}</a></li>
+  {{/each}}
+</ul>
+{{> footer}}
