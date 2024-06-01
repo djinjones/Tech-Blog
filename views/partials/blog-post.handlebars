@@ -1,0 +1,10 @@
+<section class="card" data-id="{{id}}" data-author="{{author}}">
+  <h2>{{title}}</h2>
+  {{#if showDeleteButton}}
+  <button class="delete-btn">Delete Blog Post</button>
+  {{/if}}
+  <div class="card-body">
+    <p>{{content}}</p>
+    <p>By: {{author}}</p>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<section class="container">
+{{#if loggedIn}}
+    <h2>Currently logged in as: {{user}}</h2>
+  {{#if posts.length}}
+    {{#each posts as |post|}}
+      {{> blog-post}}
+      <script src="./js/delete.js"></script>
+    {{/each}}
+  {{else}}
+    <div style="display: flex; justify-content: center; align-items: center; width: 80vw; height: 40vh;">
+      <h2 style="font-size: 3.5rem; text-align: center;">Nothing's here! Click <a href="/new" style="color: blue;">here</a> to make a new blog post.</h2>
+    </div>
+  {{/if}}
+  {{> delete-popup}}
+{{else}}
+<section style="display: flex; font-size: 3rem; justify-content: center; align-items center">
+  <a href="/login" >You must login first to view this page</a>
+</section>
+{{/if}}
+</section>

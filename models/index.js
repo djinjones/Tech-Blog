@@ -1,16 +1,12 @@
-// import models
 const User = require('./User');
-const Post = require('./Post');
+const BlogPost = require('./BlogPost');
 
-Post.belongsTo(Category, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
+User.hasMany(BlogPost, {
+  foreignKey: 'author'
 });
 
-User.hasMany(post, {
-  foreignKey: 'user_id',
+BlogPost.belongsTo(User, {
+  foreignKey: 'author'
 });
 
-module.exports = {
-  User, Post
-};
+module.exports = { User, BlogPost };
