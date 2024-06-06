@@ -1,11 +1,9 @@
 <section class="card blog-post" data-id="{{id}}" style="width: 80vw">
-  <div class="card-header" style="display: flex; flex-wrap: wrap">
-  <h2 style="margin-left: 7px; margin-right: auto;">{{title}}</h2>
-  <p style="margin-right: 7px; margin-left: auto;">By: {{user}}</p>
-  </div>
+  <h2>{{title}}</h2>
   <div class="card-body post-content">
     <p>{{content}}</p>
-    
+    <p>By: {{user}}</p>
+    <button class="delete-btn">Delete Blog Post</button>
   </div>
   <div class="comment-section">
     <!-- Existing comments will be appended here -->

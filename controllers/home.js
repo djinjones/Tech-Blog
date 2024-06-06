@@ -3,13 +3,18 @@ const { User, BlogPost } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-      const dbBlogs = await BlogPost.findAll();
+      const dbBlogs = await BlogPost.findAll(
+      // {
+      //   include: [{ model: User, attributes: ['username'] }]
+      // }
+      );
       const user = await req.session.username;
+      console.log(`user: ${user} -home.js:8`);
       const posts = dbBlogs.map((post) =>
           post.get({ plain: true })
       );
       res.render('homepage', {
-          posts, user, loggedIn: req.session.loggedIn,
+          posts, user, showDeleteButton: false, loggedIn: req.session.loggedIn,
       });
   
   } catch (err) {
